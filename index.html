@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#244538" />
+    <meta
+      name="description"
+      content="Oil By Mo brings mobile oil changes, brake services, and automotive maintenance to your location. Request a visit or get an estimate."
+    />
+    <title>Oil By Mo | Mobile Automotive Service</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header" id="home">
+      <a class="brand" href="#home" aria-label="Oil By Mo home">
+        <span class="brand-mark" aria-hidden="true">M<span>.</span></span>
+        <span class="brand-name">OIL BY MO</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="header-cta" href="#booking">Book a Visit <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-layout">
+          <div class="hero-content">
+            <p class="eyebrow"><span></span> Mobile automotive care, made simple</p>
+            <h1 id="hero-title">Good care<br /><span>keeps you</span><br />going.</h1>
+            <p class="hero-copy">Oil changes, brake services, and everyday maintenance—brought to you with clear communication and care.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#booking">Book Your Service <span aria-hidden="true">↗</span></a>
+              <a class="button button-outline" href="#services">Explore Services <span aria-hidden="true">↓</span></a>
+            </div>
+            <p class="hero-caption"><span class="status-dot"></span> Your location. Your schedule. Straightforward service.</p>
+          </div>
+          <div class="hero-visual">
+            <img
+              class="hero-photo"
+              src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"
+              alt="Mechanic working in a vehicle engine bay"
+              fetchpriority="high"
+            />
+            <span class="photo-index">OIL BY MO <span>—</span> MOBILE SERVICE</span>
+            <span class="photo-corner" aria-hidden="true"></span>
+            <span class="photo-label"><span>01</span> CARE THAT COMES TO YOU</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="intro-strip" aria-label="Oil By Mo service approach">
+        <div><span class="strip-number">01</span><strong>Mobile convenience</strong><small>Service at a location that works for you.</small></div>
+        <div><span class="strip-number">02</span><strong>Clear pricing</strong><small>Parts and labor are shown separately when configured.</small></div>
+        <div><span class="strip-number">03</span><strong>Personal confirmation</strong><small>Every visit is confirmed directly with you.</small></div>
+      </section>
+
+      <section class="section services-section" id="services">
+        <div class="section-heading">
+          <div><p class="eyebrow eyebrow-dark"><span></span> What we can help with</p><h2>Service for the miles ahead.</h2></div>
+          <p>Choose a service to start a request. Price and duration appear when Oil By Mo has configured them.</p>
+        </div>
+        <div class="service-grid" id="service-grid" aria-live="polite"></div>
+        <p class="section-footnote">Have something else in mind? <a href="#contact">Ask about additional services <span aria-hidden="true">↗</span></a></p>
+      </section>
+
+      <section class="pricing-section" id="pricing">
+        <div class="pricing-copy">
+          <p class="eyebrow"><span></span> Plan with clarity</p>
+          <h2>A useful estimate<br />starts with your car.</h2>
+          <p>Tell us what you drive and what you need. We’ll show configured labor pricing and clearly flag anything that still needs confirmation.</p>
+          <div class="pricing-assurance"><span aria-hidden="true">i</span><p>Estimates are subject to vehicle inspection and parts compatibility. No unconfigured parts prices are assumed.</p></div>
+        </div>
+        <div class="calculator-card">
+          <div class="card-topline"><span>QUICK ESTIMATE</span><span class="blue-dash"></span></div>
+          <form id="estimate-form">
+            <div class="field-grid">
+              <label>Vehicle year<input name="year" type="number" min="1900" max="2099" placeholder="e.g. 2020" required /></label>
+              <label>Make<input name="make" type="text" placeholder="e.g. Honda" required /></label>
+              <label class="field-wide">Model &amp; trim<input name="model" type="text" placeholder="e.g. Civic Sport" required /></label>
+            </div>
+            <fieldset class="service-picker">
+              <legend>What service do you need?</legend>
+              <div id="estimate-services" class="check-grid"></div>
+            </fieldset>
+            <fieldset class="parts-picker">
+              <legend>Parts preference</legend>
+              <label class="radio-row"><input type="radio" name="parts" value="customer" required /><span><strong>I already have the parts</strong><small>Customer-supplied parts; compatibility and condition are checked before installation.</small></span></label>
+              <label class="radio-row"><input type="radio" name="parts" value="shop" /><span><strong>I need Oil By Mo to provide parts</strong><small>Parts pricing is itemized when configured; otherwise it is pending confirmation.</small></span></label>
+              <label class="radio-row"><input type="radio" name="parts" value="unsure" /><span><strong>I'm not sure which parts I need</strong><small>Request a custom estimate after we review your vehicle details.</small></span></label>
+            </fieldset>
+            <button class="button button-primary estimate-button" type="submit">Calculate my estimate <span aria-hidden="true">↗</span></button>
+          </form>
+          <div class="estimate-result" id="estimate-result" role="status" aria-live="polite" hidden></div>
+          <a class="estimate-book-link" href="#booking">Continue to appointment request <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+
+      <section class="section booking-section" id="booking">
+        <div class="section-heading">
+          <div><p class="eyebrow eyebrow-dark"><span></span> Simple appointment request</p><h2>Tell us what you need.</h2></div>
+          <p>Share the essentials and a preferred time. Oil By Mo will follow up to confirm your visit.</p>
+        </div>
+        <div class="booking-shell">
+          <form id="booking-form" novalidate>
+            <div class="booking-form-grid">
+              <div class="booking-fields">
+                <section class="booking-group" aria-labelledby="booking-contact-title">
+                  <p class="step-kicker">01 <span>YOUR DETAILS</span></p>
+                  <h3 id="booking-contact-title">How can we reach you?</h3>
+                  <div class="field-grid">
+                    <label class="field-wide">Full name<input name="name" autocomplete="name" type="text" required /></label>
+                    <label>Phone number<input name="phone" autocomplete="tel" type="tel" required /></label>
+                    <label>Email address<input name="email" autocomplete="email" type="email" required /></label>
+                  </div>
+                </section>
+                <section class="booking-group" aria-labelledby="booking-service-title">
+                  <p class="step-kicker">02 <span>SERVICE &amp; PARTS</span></p>
+                  <h3 id="booking-service-title">What does your car need?</h3>
+                  <fieldset class="service-picker">
+                    <legend>Select one or more services</legend>
+                    <div id="booking-services" class="check-grid"></div>
+                  </fieldset>
+                  <fieldset class="parts-picker">
+                    <legend>Parts preference</legend>
+                    <label class="radio-row"><input type="radio" name="booking_parts" value="customer" required /><span><strong>I have my own parts</strong><small>Parts must be compatible and will be checked before installation.</small></span></label>
+                    <label class="radio-row"><input type="radio" name="booking_parts" value="shop" /><span><strong>Please source the parts for me</strong><small>We’ll need your vehicle details to check the correct fit.</small></span></label>
+                    <label class="radio-row"><input type="radio" name="booking_parts" value="unsure" /><span><strong>I'm not sure what I need</strong><small>Share your vehicle details and we’ll follow up about the parts.</small></span></label>
+                  </fieldset>
+                  <div class="vehicle-details-panel" id="vehicle-details-panel" hidden>
+                    <p class="vehicle-details-hint">To identify compatible parts, please tell us your vehicle’s year, make, and model.</p>
+                    <div class="field-grid">
+                      <label>Year<input name="vehicle_year" type="number" min="1900" max="2099" /></label>
+                      <label>Make<input name="vehicle_make" type="text" placeholder="e.g. Toyota" /></label>
+                      <label>Model<input name="vehicle_model" type="text" placeholder="e.g. Camry" /></label>
+                      <label>Trim <span class="optional">(if known)</span><input name="vehicle_trim" type="text" /></label>
+                    </div>
+                  </div>
+                  <p class="inline-error" id="service-error" role="alert" hidden>Select at least one service.</p>
+                  <div class="booking-estimate" id="booking-estimate" aria-live="polite"></div>
+                </section>
+              </div>
+              <section class="booking-group visit-group" aria-labelledby="booking-visit-title">
+                <p class="step-kicker">03 <span>YOUR VISIT</span></p>
+                <h3 id="booking-visit-title">Where and when?</h3>
+                <p class="form-hint">Your date and time are preferences. We’ll confirm your visit directly.</p>
+                <div class="visit-fields">
+                  <label>Service location<input name="location" type="text" placeholder="Address or preferred meeting area" required /></label>
+                  <label>Preferred date<input name="date" type="date" required /></label>
+                  <label>Preferred time<input name="time" type="text" placeholder="e.g. morning or after 3 pm" required /></label>
+                  <label>Anything else? <span class="optional">(optional)</span><textarea name="instructions" rows="4" placeholder="Share any helpful details"></textarea></label>
+                </div>
+                <p class="pending-note">Submitting sends a request, not a confirmed appointment. Oil By Mo will follow up to confirm availability and any pending parts or charges.</p>
+                <button class="button button-primary booking-submit" id="booking-submit" type="submit">Request a Visit <span aria-hidden="true">↗</span></button>
+              </section>
+            </div>
+            <div class="form-message" id="booking-message" role="status" aria-live="polite" hidden></div>
+          </form>
+        </div>
+      </section>
+
+      <section class="gallery-section" id="gallery">
+        <div class="section gallery-inner">
+          <div class="section-heading">
+            <div><p class="eyebrow"><span></span> Work in the shop</p><h2>Real work. Real cars.</h2></div>
+            <p>Photos will appear here as Oil By Mo adds completed jobs. Before-and-after images can be managed in the site settings.</p>
+          </div>
+          <div class="gallery-grid" id="gallery-grid"></div>
+        </div>
+      </section>
+
+      <section class="section about-section" id="about">
+        <div class="about-mark" aria-hidden="true">M<span>.</span></div>
+        <div class="about-copy">
+          <p class="eyebrow eyebrow-dark"><span></span> A better service conversation</p>
+          <h2>Good service begins<br />with a straight answer.</h2>
+          <p>Oil By Mo is here to make everyday automotive service easier to understand. Tell us what your vehicle needs, ask questions, and get an estimate before work begins.</p>
+          <a class="text-link" href="#contact">Talk with Oil By Mo <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="about-photo" role="img" aria-label="Automotive tools and service bay"></div>
+      </section>
+
+      <section class="faq-section">
+        <div class="section faq-layout">
+          <div><p class="eyebrow eyebrow-dark"><span></span> Good to know</p><h2>Questions,<br />answered.</h2><p class="faq-intro">Still have a question? <a href="#contact">Get in touch</a>.</p></div>
+          <div class="faq-list">
+            <details><summary>Can I bring my own parts?<span aria-hidden="true">+</span></summary><p>Yes, you can request installation of your own parts. Parts must be compatible with your vehicle and will be inspected before installation.</p></details>
+            <details><summary>Can Oil By Mo provide brake pads and rotors?<span aria-hidden="true">+</span></summary><p>You can ask Oil By Mo to provide parts. Parts pricing depends on vehicle fitment and will be confirmed before work begins.</p></details>
+            <details><summary>How long does an oil change take?<span aria-hidden="true">+</span></summary><p>Service duration depends on the vehicle and schedule. Oil By Mo will confirm an expected time when reviewing your request.</p></details>
+            <details><summary>How do appointment confirmations work?<span aria-hidden="true">+</span></summary><p>Submitting the form sends an appointment request, not a confirmed booking. Oil By Mo will contact you to confirm availability.</p></details>
+            <details><summary>What if additional repairs are needed?<span aria-hidden="true">+</span></summary><p>Any additional work and its cost should be discussed with you before it is added to the service request.</p></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact">
+        <div class="contact-panel">
+          <div class="contact-copy">
+            <p class="eyebrow"><span></span> Start the conversation</p>
+            <h2>Questions about<br />your vehicle?</h2>
+            <p>Send a note with what you need, and Oil By Mo can follow up using your preferred contact details.</p>
+            <div class="contact-details">
+              <p><span>PHONE</span><a id="business-phone" href="#contact">Phone number to be added</a></p>
+              <p><span>EMAIL</span><a id="business-email" href="#contact">Business email to be added</a></p>
+              <p><span>SERVICE AREA</span><strong id="business-area">Service area to be added</strong></p>
+              <p><span>INSTAGRAM</span><a id="business-instagram" href="#contact">Instagram link to be added</a></p>
+            </div>
+          </div>
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="card-topline"><span>CONTACT OIL BY MO</span><span class="blue-dash"></span></div>
+            <label>Your name<input name="name" autocomplete="name" type="text" required /></label>
+            <label>Email or phone<input name="contact" type="text" required /></label>
+            <label>How can we help?<textarea name="message" rows="4" required></textarea></label>
+            <button class="button button-primary" type="submit">Send message <span aria-hidden="true">↗</span></button>
+            <p class="form-message" id="contact-message" role="status" aria-live="polite" hidden></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-main">
+        <a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true">M<span>.</span></span><span class="brand-name">OIL BY MO</span></a>
+        <p>Automotive service, straightforward.</p>
+        <nav aria-label="Footer navigation"><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#booking">Book a service</a><a href="#contact">Contact</a></nav>
+      </div>
+      <div class="footer-bottom"><span>© <span id="year"></span> Oil By Mo</span><span>Appointment requests are pending until confirmed.</span><a href="#home">Back to top ↑</a></div>
+    </footer>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
